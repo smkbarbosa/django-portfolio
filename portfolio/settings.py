@@ -57,7 +57,11 @@ ROOT_URLCONF = 'portfolio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'core/templates'), # --> Quando você usa os apps em pastas no mesmo nível do projeto,
+            # precisa inserir o local da pasta do template aqui. Se a pasta do app estivesse um nível abaixo da pasta do projeto
+            # e das configurações, não seria necessário inserir isto aqui
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
